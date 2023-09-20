@@ -19,11 +19,14 @@ export const loader = async () => {
         },
       }
     );
-    const { data } = await axios('/api/v1/console/byBrandAndCategory', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const { data } = await axios(
+      'https://retrocatcher.onrender.com/api/v1/console/byBrandAndCategory',
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     const {
       data: { count, consoles },
