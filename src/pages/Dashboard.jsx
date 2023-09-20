@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import HomeConsole from '../components/HomeConsole';
 import HandheldConsole from '../components/HandheldConsole';
-HomeConsole;
+
 import ScrollTop from '../components/ScrollTop';
 export const loader = async () => {
   const token = localStorage.getItem('token');
@@ -11,11 +11,14 @@ export const loader = async () => {
   try {
     const {
       data: { user },
-    } = await axios(`/api/v1/user/current-user`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    } = await axios(
+      `https://retrocatcher.onrender.com/api/v1/user/current-user`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     const { data } = await axios('/api/v1/console/byBrandAndCategory', {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -24,7 +27,7 @@ export const loader = async () => {
 
     const {
       data: { count, consoles },
-    } = await axios('/api/v1/favoris', {
+    } = await axios('https://retrocatcher.onrender.com/api/v1/favoris', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

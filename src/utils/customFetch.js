@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const customFetch = axios.create({ baseURL: '/api/v1' });
+const customFetch = axios.create({
+  baseURL: 'https://retrocatcher.onrender.com/api/v1',
+});
 customFetch.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');

@@ -9,11 +9,15 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
 
   try {
-    const resp = await axios.put('/api/v1/user/update-user', data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const resp = await axios.put(
+      'https://retrocatcher.onrender.com/api/v1/user/update-user',
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     localStorage.setItem('token', resp.data.token);
     toast.success('changement de nom effectué');
     return redirect('/dashboard');

@@ -9,7 +9,10 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
 
   try {
-    const resp = await axios.post('/api/v1/auth/login', data);
+    const resp = await axios.post(
+      'https://retrocatcher.onrender.com/api/v1/auth/login',
+      data
+    );
     localStorage.setItem('token', resp.data.token);
     toast.success('Connexion réussie');
 
@@ -25,7 +28,9 @@ const Login = () => {
   const [userCount, setUserCount] = useState();
   const fetchConsole = useCallback(async () => {
     try {
-      const { data } = await axios(`/api/v1/console`);
+      const { data } = await axios(
+        `https://retrocatcher.onrender.com/api/v1/console`
+      );
 
       setConsoleData(data);
     } catch (error) {
@@ -36,7 +41,9 @@ const Login = () => {
 
   const fetchUserCount = useCallback(async () => {
     try {
-      const { data } = await axios(`/api/v1/user`);
+      const { data } = await axios(
+        `https://retrocatcher.onrender.com/api/v1/user`
+      );
 
       setUserCount(data.count);
     } catch (error) {
