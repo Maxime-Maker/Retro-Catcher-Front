@@ -101,7 +101,7 @@ const Login = () => {
       <article className="p2 card ">
         Sur Retro Catcher vous pouvez interagir avec chaque fiche produit afin
         de l&apos;ajouter à votre collection. Pour cela, vous n&apos;aurez
-        qu&apos;à cliquer sur le bouton «je l&apos;ai» ou «je le veux»
+        qu&apos;à cliquer la console afin de l&apos;ajouter a votre collection.
       </article>
       <article className="p3 card ">
         Afin de pouvoir naviguer facilement dans votre collection, celle-ci sera
